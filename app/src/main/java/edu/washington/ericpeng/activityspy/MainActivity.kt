@@ -12,6 +12,19 @@ class MainActivity : AppCompatActivity() {
         Log.i("MainActivity", "onCreate event fired")
     }
 
+    override fun onPause() {
+        super.onPause()
+
+        if (this.isFinishing){
+            finish()
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        finish()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         Log.e("MainActivity", "We’re going down, Captain!");
